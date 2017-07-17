@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { routerModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { UnsplashModule } from './unsplash/unsplash.module';
 
@@ -10,6 +10,7 @@ import { UnsplashModule } from './unsplash/unsplash.module';
   ],
   imports: [
     BrowserModule,
+    routerModule,
     UnsplashModule,
   ],
   providers: [],
