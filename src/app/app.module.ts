@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { routerModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { UnsplashModule } from './unsplash/unsplash.module';
+import { MainMenuComponent } from './main-menu/main-menu.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainMenuComponent,
   ],
   imports: [
     BrowserModule,
