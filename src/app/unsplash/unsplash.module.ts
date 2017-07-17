@@ -4,6 +4,7 @@ import { UnsplashService } from './unsplash.service';
 import { NewsListComponent } from './news-list.component';
 import { routerModule } from './unsplash.routing';
 import { SearchListComponent } from './search-list.component';
+import { PhotoThumbnailComponent } from './photo-thumbnail.component';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { SearchListComponent } from './search-list.component';
   declarations: [
     NewsListComponent,
     SearchListComponent,
+    PhotoThumbnailComponent,
   ],
   exports: [
     NewsListComponent,
