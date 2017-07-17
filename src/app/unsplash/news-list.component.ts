@@ -8,11 +8,14 @@ import { UnsplashService } from './unsplash.service';
 })
 export class NewsListComponent implements OnInit {
 
+  photos;
+
   constructor(private unsplashService:UnsplashService) {
 
   }
 
   ngOnInit() {
+    this.photos = this.unsplashService.getNewPhotos();
   }
 
 }
