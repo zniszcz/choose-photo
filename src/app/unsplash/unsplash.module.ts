@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { UnsplashService } from './unsplash.service';
 import { NewsListComponent } from './news-list.component';
 import { routerModule } from './unsplash.routing';
+import { SearchListComponent } from './search-list.component';
 
 @NgModule({
   imports: [
@@ -11,6 +12,7 @@ import { routerModule } from './unsplash.routing';
   ],
   declarations: [
     NewsListComponent,
+    SearchListComponent,
   ],
   exports: [
     NewsListComponent,
