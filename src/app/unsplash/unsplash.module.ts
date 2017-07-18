@@ -5,6 +5,7 @@ import { NewsListComponent } from './news-list.component';
 import { routerModule } from './unsplash.routing';
 import { SearchListComponent } from './search-list.component';
 import { PhotoThumbnailComponent } from './photo-thumbnail.component';
+import { AuthoriseComponent } from './authorise.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { PhotoThumbnailComponent } from './photo-thumbnail.component';
     NewsListComponent,
     SearchListComponent,
     PhotoThumbnailComponent,
+    AuthoriseComponent,
   ],
   exports: [
     NewsListComponent,
