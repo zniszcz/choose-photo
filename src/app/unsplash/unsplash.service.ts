@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable, Subject } from 'rxjs';
+import credentials from '../../../credentials.json';
 
 @Injectable()
 export class UnsplashService {
@@ -9,7 +10,9 @@ export class UnsplashService {
 
   photosStream = new Subject();
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) {
+    console.log(credentials);
+  }
 
   getPhotosStream() {
     return Observable
