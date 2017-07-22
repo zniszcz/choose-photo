@@ -1,27 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { UnsplashService } from '../unsplash.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'authorise',
-  templateUrl: './authorise.component.html',
-  styleUrls: ['./authorise.component.scss']
+  template: '',
+  styleUrls: []
 })
 export class AuthoriseComponent implements OnInit {
 
-  constructor(private unsplashService:UnsplashService) { }
-
-  auth() {
-    const url = this.unsplashService.getAuthenticationUrl();
-    console.log(url);
-    location.assign(url);
-  }
+  constructor(private unsplashService:UnsplashService,
+      private router:Router) { }
 
   ngOnInit() {
-    const search = location.search;
-    if (search.startsWith("?code=")) {
+    if (location.search.startsWith("?code=")) {
       this.unsplashService
-        .setUnsplashAuthenticationCode(search.substr(6, search.length - 6));
+        .setUnsplashAuthenticationCode(location.search.substr(6, location.search.length - 6));
     }
+    this.router.navigateByUrl('/news');
   }
 
 }
