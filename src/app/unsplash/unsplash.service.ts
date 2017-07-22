@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import Unsplash from 'unsplash-js';
 import credentials from '../../../credentials.json';
@@ -16,8 +15,7 @@ export class UnsplashService {
 
   unsplashAuthenticationCode;
 
-  constructor(private http: Http,
-    private router: Router) {
+  constructor(private http: Http) {
     this.unsplash = new Unsplash(credentials);
   }
 
@@ -37,7 +35,11 @@ export class UnsplashService {
 
   getNewPhotos() {
     return this.unsplash.photos.listPhotos(2, 15, "latest")
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+      })
   }
 
   setUnsplashAuthenticationCode(code) {
@@ -53,6 +55,5 @@ export class UnsplashService {
             .auth
             .setBearerToken(json.access_token);
         });
-    this.router.navigateByUrl('/news');
   }
 }
