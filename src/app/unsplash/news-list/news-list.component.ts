@@ -14,6 +14,11 @@ export class NewsListComponent implements OnInit {
 
   }
 
+  auth() {
+    const url = this.unsplashService.getAuthenticationUrl();
+    location.assign(url);
+  }
+
   ngOnInit() {
     this.photos = this.unsplashService.getNewPhotos();
   }

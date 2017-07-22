@@ -1,4 +1,9 @@
 <div class="row">
+  <div *ngIf="photos.length === 0">
+    <button
+      class="btn btn-primary"
+      (click)="auth()">Autoryzuj</button>
+  </div>
   <photo-thumbnail *ngFor="let photo of photos | async"
-    class="col-md-3" [photo]="photo"></photo-thumbnail>
+    class="col-lg-3 col-md-6" [photo]="photo"></photo-thumbnail>
 </div>
