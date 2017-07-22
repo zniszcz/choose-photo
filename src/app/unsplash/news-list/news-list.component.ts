@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UnsplashService } from './unsplash.service';
+import { UnsplashService } from '../unsplash.service';
 
 @Component({
   selector: 'news-list',

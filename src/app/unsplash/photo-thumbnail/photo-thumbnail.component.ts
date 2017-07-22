@@ -2,14 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'photo-thumbnail',
-  template: `
-    <div class="card">
-      <img class="card-img-top" src="{{ photo.urls.thumb }}" alt="Card image cap">
-    </div>
-  `,
-  styles: [`
-
-  `]
+  templateUrl: './photo-thumbnail.component.html',
+  styles: ['./photo-thumbnail.component.scss']
 })
 export class PhotoThumbnailComponent implements OnInit {
 
